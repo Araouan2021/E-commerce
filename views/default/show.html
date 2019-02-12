@@ -1,0 +1,10 @@
+{{extend 'layout.html'}}
+<h1>Title: {{=ads.title}}</h1>
+<h1>Description: {{=ads.description}}</h1>
+<h1>Location: {{=ads.location}}<h1>
+<h1>Price: {{=ads.price}}</h1>
+<h1>Phone number: {{=ads.phone}}</h1>
+<div style="text-align:center">
+<img width="200px"
+     src="{{=URL('download', args=ads.file)}}" />
+</div>
