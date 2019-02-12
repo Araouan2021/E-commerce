@@ -7,7 +7,7 @@ auth.define_tables(username=True)
 
 db.define_table('ads',
                 Field('title'),
-                Field('description'),
+                Field('description','text'),
                 Field('location'),
                 Field('price'),
                 Field('phone'),

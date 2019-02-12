@@ -1,7 +1,7 @@
 {{extend 'layout.html'}}
 <h1>Current Images</h1>
 <ul>
-{{for image in images:}}
-{{=LI(A(images.title, _href=URL("show", args=images.id)))}}
+{{for ad in ads:}}
+{{=LI(A(ad.title, _href=URL("show", args=ad.id)))}}
 {{pass}}</ul>
-[ {{=A('create page', _href=URL('create'))}} ]
+[ {{=A('create ad', _href=URL('create'))}} ]

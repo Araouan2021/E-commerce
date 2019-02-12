@@ -17,8 +17,8 @@ def download():
     return response.download(request, db)
 
 def index():
-    images = db().select(db.ads.ALL, orderby=db.ads.title)
-    return dict(images=images)
+    ads = db().select(db.ads.ALL, orderby=db.ads.title)
+    return dict(ads=ads)
 
 def search():
     return dict(form=FORM(INPUT(_id='keyword',

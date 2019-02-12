@@ -325,3 +325,4 @@ CREATE TABLE "ads"(
     "file" CHAR(512)
 );
 success!
+success!
