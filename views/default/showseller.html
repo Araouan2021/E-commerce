@@ -1,0 +1,15 @@
+{{extend 'layout.html'}}
+<h1>Ads: {{=ads}}</h1>
+<div style="text-align:center">
+<img width="200px"
+     src="{{=URL('download', args=ads)}}" />
+</div>
+{{if len(ads):}}
+  <h2>Ads</h2><br /><p>
+  {{for ad in ads:}}
+    <p>{{=ads}}</p>
+  {{pass}}</p>
+{{else:}}
+  <h2>No ads posted yet</h2>
+{{pass}}
+<h2>Post an ad</h2>

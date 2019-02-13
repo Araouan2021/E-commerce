@@ -26,5 +26,16 @@ def search():
                                 _onkeyup="ajax('callback', ['keyword'], 'target');")),
                 target_div=DIV(_id='target'))
 
-def contactform():
+def contact():
     return dict(form=auth())
+
+def showseller():
+    ads = db().select(db.ads.ALL, orderby=db.ads.title)
+    return dict(ads=ads)
+
+
+
+
+
+
+    

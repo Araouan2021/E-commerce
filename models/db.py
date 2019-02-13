@@ -11,6 +11,7 @@ db.define_table('ads',
                 Field('location'),
                 Field('price'),
                 Field('phone'),
-                Field('file', 'upload'),              
+                Field('file', 'upload'),
+                auth.signature              
                 )
 

@@ -326,3 +326,14 @@ CREATE TABLE "ads"(
 );
 success!
 success!
+timestamp: 2019-02-12T13:40:30.843320
+ALTER TABLE "ads" ADD "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ;
+timestamp: 2019-02-12T13:40:30.856801
+ALTER TABLE "ads" ADD "is_active" CHAR(1);
+timestamp: 2019-02-12T13:40:30.858304
+ALTER TABLE "ads" ADD "created_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ;
+timestamp: 2019-02-12T13:40:30.862666
+ALTER TABLE "ads" ADD "created_on" TIMESTAMP;
+timestamp: 2019-02-12T13:40:30.871504
+ALTER TABLE "ads" ADD "modified_on" TIMESTAMP;
+success!
