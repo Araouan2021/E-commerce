@@ -2,6 +2,8 @@
 <h1>Current Images</h1>
 <ul>
 {{for ad in ads:}}
+<img width="200px"
+     src="{{=URL('download', args=ad.file)}}" />
 {{=LI(A(ad.title, _href=URL("show", args=ad.id)))}}
 {{pass}}</ul>
 [ {{=A('create ad', _href=URL('create'))}} ]

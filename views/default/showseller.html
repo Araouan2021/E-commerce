@@ -1,15 +1,9 @@
 {{extend 'layout.html'}}
-<h1>Ads: {{=ads}}</h1>
-<div style="text-align:center">
+<h1>Current Images</h1>
+<ul>
+{{for ad in ads:}}
 <img width="200px"
-     src="{{=URL('download', args=ads)}}" />
-</div>
-{{if len(ads):}}
-  <h2>Ads</h2><br /><p>
-  {{for ad in ads:}}
-    <p>{{=ads}}</p>
-  {{pass}}</p>
-{{else:}}
-  <h2>No ads posted yet</h2>
-{{pass}}
-<h2>Post an ad</h2>
+     src="{{=URL('download', args=ad.file)}}" />
+{{=LI(A(ad.title, _href=URL("show", args=ad.id)))}}
+{{pass}}</ul>
+[ {{=A('create ad', _href=URL('create'))}} ]

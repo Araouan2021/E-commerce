@@ -29,13 +29,20 @@ def search():
 def contact():
     return dict(form=auth())
 
+@auth.requires_login()
 def showseller():
-    ads = db().select(db.ads.ALL, orderby=db.ads.title)
+    ads = db(db.ads.created_by == auth.user).select(orderby=db.ads.title)
     return dict(ads=ads)
 
 
+def delete():
+    parameters = request.args
+    submitted_id = parameters[0]
 
-
-
+    if db(db.ads.id == submitted_id).select():
+        db(db.ads.id == submitted_id).delete()
+        return 'Ad Deleted Successfully'
+    else:
+        return 'No Ad with the ID found'
 
     
