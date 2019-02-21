@@ -34,15 +34,28 @@ def showseller():
     ads = db(db.ads.created_by == auth.user).select(orderby=db.ads.title)
     return dict(ads=ads)
 
-
+@auth.requires_login()
 def delete():
     parameters = request.args
     submitted_id = parameters[0]
 
     if db(db.ads.id == submitted_id).select():
         db(db.ads.id == submitted_id).delete()
-        return 'Ad Deleted Successfully'
+        return 'Ads Deleted Successfully'
+
     else:
-        return 'No Ad with the ID found'
+        return 'No Ad With the ID found'
+ 
+def showbuyer():
+    ads = db(db.ads.created_by == auth.user).select(orderby=db.ads.title)
+    return dict(ads=ads)
+
+def callback():
+    query = db.ads.title.contains(request.vars.keyword)
+    pages = db(query).select(orderby=db.ads.title)
+    links = [A(ads.title, _href=URL('show', args=ads.id)) for a in ads]
+    return UL(*links)
+
+
 
     
