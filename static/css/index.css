@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300);
+
+
+h1 {
+	color: darkslategray;
+	text-align: center;
+	font-size: 60px;
+	font-family: montserrat
+}
+
+body {
+	padding: 100px;
+	margin: 40px;
+}
