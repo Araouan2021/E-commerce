@@ -4,32 +4,31 @@
 <head>
  <link rel="stylesheet" href="{{=URL('static', 'css/register.css')}}"/>
 </head>
-<style type="text/css">
-</style>
-<form action="" method="post">
-    <h1>Sign Up</h1>
-    <div>
-        <label for="firstname">First Name</label>
-        <input type="text" name="firstname">
+<h1>Sign Up</h1>
+<div class="u-pad-s u-pad-vertical-xl client-view">
+  <form class="u-mar-bottom-l">
+    <div class="o-grid">
+      <div class="o-grid__col o-grid__col--1-of-2">
+      <label class="c-label" style="font-family: Roboto; color: Maroon; font-weight: bold">
+          First Name
+          <input class="c-input" type=email />
+        </label>
+      </div>
+      <div class="o-grid__col o-grid__col--1-of-2">
+        <label class="c-label" style="font-family: Roboto; color: Maroon; font-weight: bold">
+          Last Name
+          <input class="c-input" type=email />
+        </label>
+      </div>
     </div>
-
-    <div>
-        <label for="lastname">Last Name</label>
-        <input type="text" name="lastname">
-    </div>
-
-    <div>
-        <label for="email">Email</label>
-        <input type="text" name="email">
-    </div>
-
-    <div>
-        <label for="password">Password</label>
-        <input type= "password" name="password">
-    </div>
-
-    <button type="submit" class="adduserbtn">Save User</button>
-</form>
-</body>
-</html>
-
+    <label class="c-label" style="font-family: Roboto; color: Maroon; font-weight: bold">
+      Email
+      <input class="c-input" type=email />
+    </label>
+    <label class="c-label" style="font-family: Roboto; color: Maroon; font-weight: bold">
+      Password
+      <input class="c-input" type=email />
+    </label>
+     <button type="submit" class="signupbtn">Sign Up</button>
+  </form>
+</div>

@@ -41,7 +41,7 @@ def delete():
 
     if db(db.ads.id == submitted_id).select():
         db(db.ads.id == submitted_id).delete()
-        return 'Ads Deleted Successfully'
+        return 'Ad Deleted Successfully'
 
     else:
         return 'No Ad With the ID found'
