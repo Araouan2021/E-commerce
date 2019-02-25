@@ -2,7 +2,25 @@ def user():
     return dict(form=auth())
 
 def register():
-    return dict(form=auth())
+    return dict()
+
+def store():
+    submitted_firstname = request.vars.firstname
+    submitted_lastname = request.vars.lastname
+    submitted_email = request.vars.email
+    submitted_password = request.vars.password 
+
+    results = db.ads.insert(
+        db_firstname = submitted_firstname,
+        db_lastname = submitted_lastname,
+        db_email = submitted_email,
+        db_password = submitted_password
+        )
+
+    if results:
+        return "User Saved Successfully"
+    else:
+        return "An Error Occurred"
 
 @auth.requires_login()
 def create():

@@ -1,6 +1,4 @@
-
-<!DOCTYPE html>
-<html>
+<form action="{{=URL('store')}}" method="post">
 <head>
  <link rel="stylesheet" href="{{=URL('static', 'css/register.css')}}"/>
 </head>
@@ -11,23 +9,23 @@
       <div class="o-grid__col o-grid__col--1-of-2">
       <label class="c-label" style="font-family: Roboto; color: Maroon; font-weight: bold">
           First Name
-          <input class="c-input" type=email />
+          <input class="c-input" type='text' />
         </label>
       </div>
       <div class="o-grid__col o-grid__col--1-of-2">
         <label class="c-label" style="font-family: Roboto; color: Maroon; font-weight: bold">
           Last Name
-          <input class="c-input" type=email />
+          <input class="c-input" type='text' />
         </label>
       </div>
     </div>
     <label class="c-label" style="font-family: Roboto; color: Maroon; font-weight: bold">
       Email
-      <input class="c-input" type=email />
+      <input class="c-input" type='text' />
     </label>
     <label class="c-label" style="font-family: Roboto; color: Maroon; font-weight: bold">
       Password
-      <input class="c-input" type=email />
+      <input class="c-input" type="password" />
     </label>
      <button type="submit" class="signupbtn">Sign Up</button>
   </form>

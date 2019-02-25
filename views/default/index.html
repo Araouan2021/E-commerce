@@ -51,7 +51,11 @@ h2 {
 {{for ad in ads:}}
 <img width="200px"
      height="200px"
-     src="{{=URL('download', args=ad.file)}}"     
+     src="{{=URL('download', args=ad.file)}}"
+     border="1px solid #ddd"
+     border-radius="4px"
+     padding="5px">
+
 {{=LI(A(ad.title, _href=URL("show", args=ad.id)))}}
 {{pass}}</ul>
 [ {{=A('create ad', _href=URL('create'))}} ]
