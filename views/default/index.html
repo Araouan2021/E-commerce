@@ -1,12 +1,53 @@
 {{extend 'layout.html'}}
 <link rel="stylesheet" href="{{=URL('static', 'css/index.css')}}"/>
-<nav> 
+<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+<head>
+<style>
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: DarkGray;
+}
+
+li {
+  float: left;
+}
+
+li {
+  display: inline;
+}
+
+li a {
+  display: block;
+  color: SeaShell;
+  font-family: "Helvetica";
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: DimGray;
+}
+
+h2 {
+  font-family: 'Courgette', cursive;
+}
+
+</head>
+</style>
+
         <ul>
-          <li><a href="home.com" class="on">Home</a></li>
-          <li><a href="clothing.com">Products</a></li>
-          <li><a href="contact.com">Contact</a></li>
-<h1>Current Ads</h1>
-<ul>
+          <li><a href="home">Home</a></li>
+          <li><a href="clothing">Clothing</a></li>
+          <li><a href="contact">Contact</a></li>
+</ul>
+
+<h1>Clothes R' Us</h1>
+<h2>Current Ads</h2>
 {{for ad in ads:}}
 <img width="200px"
      height="200px"

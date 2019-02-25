@@ -2,8 +2,21 @@
 
 h1 {
   font-family: Montserrat, sans-serif;
-  font-size: 60px;
-  margin: 80px;
-  color: DarkSlateGray;
+  font-size: 50px;
+  margin: 5px;
+  color: Gray;
   text-align: center;
 }
+
+h2 {
+  font-size: 35px;
+  margin: 40px;
+  color: RosyBrown;
+  text-align: center;
+}
+
+body {
+  background-color: MistyRose;
+}
+    
+    
