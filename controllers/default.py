@@ -1,6 +1,3 @@
-def user():
-    return dict(form=auth())
-
 def register():
     return dict()
 
@@ -21,6 +18,22 @@ def store():
         return "User Saved Successfully"
     else:
         return "An Error Occurred"
+
+def login():
+    return dict()
+
+def authenticate():
+    submitted_email = request.vars.email
+    submitted_password = request.vars.password
+
+    if db(db.ads.db_email==submitted_email 
+        and db.ads.db_password==submitted_password).count()>0:
+        return "User logged in Successfully"
+    else:
+        return "Login failed"
+        
+def edit():
+    return dict()
 
 @auth.requires_login()
 def create():

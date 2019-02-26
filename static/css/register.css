@@ -20,19 +20,24 @@ input {
     margin: 8px 0;
     box-sizing: border-box;
     border-style: solid;
-    border-width: Maroon 2px;
-    border-color: Maroon;
+    border-width: 2px;
+    border-color: DarkSeaGreen;
 }
 
 .signupbtn {
     background-color: DarkSeaGreen;
     color: White;
-    border: 2px solid;
-    padding: 30px;
-    margin: 60px;
+    padding: 20px;
+    margin: 30px;
     font-size: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 10%;
+    border-radius: 12px;
+}
+
+.register-container {
+    color: DarkSeaGreen; 
+    margin-top: 80px; 
+    font-size: 50px
 }
