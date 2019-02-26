@@ -1,16 +1,20 @@
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-h1 {
+body {
     font-family: "Roboto", sans-serif;
+    color: DarkSeaGreen;
+}
+
+h1 {
+    text-align: center;
+    margin: 80px;
     font-size: 50px;   
-    padding: 60px;
-    color: Maroon;
+    color: DarkSeaGreen;
 }
 
 input {
-    font-family: "Roboto", sans-serif;
-    color: Maroon;
+    color: DarkSeaGreen;
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -21,8 +25,7 @@ input {
 }
 
 .signupbtn {
-    font-family: "Roboto", sans-serif;
-    background-color: Maroon;
+    background-color: DarkSeaGreen;
     color: White;
     border: 2px solid;
     padding: 30px;
