@@ -40,6 +40,14 @@ li a:hover {
 h2 {
   font-family: 'Courgette', cursive;
 }
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
 
 </head>
 </style>
@@ -50,7 +58,6 @@ h2 {
           <li><a href="contact">Contact</a></li>
           <li style="float:right"><a class="active" href="#Login">Login</a></li>
 </ul>
-</ul>
 
 <h1>Clothes R' Us</h1>
 <h2>Current Ads</h2>
@@ -60,8 +67,8 @@ h2 {
      src="{{=URL('download', args=ad.file)}}"
      border="1px solid #ddd"
      border-radius="4px"
-     padding="5px">
-
+     padding="30px"
+     color="gray">
 {{=LI(A(ad.title, _href=URL("show", args=ad.id)))}}
 {{pass}}</ul>
 [ {{=A('create ad', _href=URL('create'))}} ]

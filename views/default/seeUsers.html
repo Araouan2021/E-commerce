@@ -1,0 +1,10 @@
+{{if users:}}
+  {{for user in users:}}
+    <p>
+    Email is {{=user.db_email}} , Password is {{=user.db_password}} 
+    </p>
+  {{pass}}
+{{else:}}
+  <h2>No Users Found</h2>
+{{pass}}
+

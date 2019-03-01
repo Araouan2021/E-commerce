@@ -8,7 +8,7 @@ body {
 
 h1 {
     text-align: center;
-    margin: 80px;
+    margin: 50px;
     font-size: 50px;   
     color: DarkSeaGreen;
 }
@@ -27,8 +27,8 @@ input {
 .signupbtn {
     background-color: DarkSeaGreen;
     color: White;
-    padding: 20px;
-    margin: 30px;
+    padding: 10px;
+    margin: 10px;
     font-size: 20px;
     display: block;
     margin-left: auto;
@@ -38,6 +38,6 @@ input {
 
 .register-container {
     color: DarkSeaGreen; 
-    margin-top: 80px; 
-    font-size: 50px
+    margin-top: 40px; 
+    font-size: 20px
 }

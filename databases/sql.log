@@ -337,3 +337,37 @@ ALTER TABLE "ads" ADD "created_on" TIMESTAMP;
 timestamp: 2019-02-12T13:40:30.871504
 ALTER TABLE "ads" ADD "modified_on" TIMESTAMP;
 success!
+timestamp: 2019-02-27T17:32:25.430948
+CREATE TABLE "seller"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "db_email" CHAR(512),
+    "db_password" CHAR(512)
+);
+success!
+timestamp: 2019-02-27T17:39:48.048354
+ALTER TABLE "seller" ADD "password" CHAR(512);
+timestamp: 2019-02-27T17:39:48.054389
+ALTER TABLE "seller" ADD "email" CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2019-02-27T20:02:59.211003
+CREATE TABLE "users"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "db_email" CHAR(512),
+    "db_password" CHAR(512)
+);
+success!

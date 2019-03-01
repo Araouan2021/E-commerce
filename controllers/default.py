@@ -19,6 +19,10 @@ def store():
     else:
         return "An Error Occurred"
 
+def seeUsers():
+    users =db().select(db.users.ALL)
+    return dict(users=users)
+
 def login():
     return dict()
 
@@ -26,8 +30,8 @@ def authenticate():
     submitted_email = request.vars.email
     submitted_password = request.vars.password
 
-    if db(db.ads.db_email==submitted_email 
-        and db.ads.db_password==submitted_password).count()>0:
+    if db(db.users.db_email==submitted_email 
+        and db.users.db_password==submitted_password).count()>0:
         return "User logged in Successfully"
     else:
         return "Login failed"
@@ -35,7 +39,7 @@ def authenticate():
 def edit():
     return dict()
 
-@auth.requires_login()
+#@auth.requires_login()
 def create():
     form = SQLFORM(db.ads).process(next=URL('index'))
     return dict(form=form)
@@ -60,12 +64,12 @@ def search():
 def contact():
     return dict(form=auth())
 
-@auth.requires_login()
+#@auth.requires_login()
 def showseller():
     ads = db(db.ads.created_by == auth.user).select(orderby=db.ads.title)
     return dict(ads=ads)
 
-@auth.requires_login()
+#@auth.requires_login()
 def delete():
     parameters = request.args
     submitted_id = parameters[0]
