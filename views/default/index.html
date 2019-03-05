@@ -6,69 +6,80 @@
 <link rel="stylesheet" href="{{=URL('static', 'css/index.css')}}"/>
 <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
 </head>
-<style>
+  <style>
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: DarkGray;
-}
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: DarkGray;
+    }
 
-li {
-  float: left;
-}
+    li {
+      float: left;
+    }
 
-li {
-  display: inline;
-}
+    li {
+      display: inline;
+    }
 
-li a {
-  display: block;
-  color: SeaShell;
-  font-family: "Helvetica";
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+    li a {
+      display: block;
+      color: SeaShell;
+      font-family: "Helvetica";
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
 
-li a:hover {
-  background-color: DimGray;
-}
+    li a:hover {
+      background-color: DimGray;
+    }
 
-h2 {
-  font-family: 'Courgette', cursive;
-}
-* {
-  box-sizing: border-box;
-}
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
+    h1 {
+      text-align: center;
+    }
 
+    h2 {
+      font-family: 'Courgette', cursive;
+      text-align: center;
+    }
+
+  </style>                          
 </head>
-</style>
+<body>
 
-        <ul>
-          <li><a href="home">Home</a></li>
-          <li><a href="clothing">Clothing</a></li>
-          <li><a href="contact">Contact</a></li>
-          <li style="float:right"><a class="active" href="#Login">Login</a></li>
-</ul>
+  <ul>
+    <li><a href="Home">Home</a></li>
+    <li><a href="Clothing">Clothing</a></li>
+    <li><a href="Contact">Contact</a></li>
+    <li style="float:right"><a href="#Login">Login</a></li>
+  </ul>
 
-<h1>Clothes R' Us</h1>
-<h2>Current Ads</h2>
-{{for ad in ads:}}
-<img width="200px"
-     height="200px"
-     src="{{=URL('download', args=ad.file)}}"
-     border="1px solid #ddd"
-     border-radius="4px"
-     padding="30px"
-     color="gray">
-{{=LI(A(ad.title, _href=URL("show", args=ad.id)))}}
-{{pass}}</ul>
+  <div class="container">
+    <div class="row">
+      <h1>Clothes R' Us</h1>
+      <h2>Current Ads</h2>
+    </div>
+    <div class="row">
+      {{for ad in ads:}}
+      <div class="col-4">
+        <div class="card" style="width: 18rem; margin-bottom: 20px;">
+          <img src="{{=URL('download', args=ad.file)}}" class="card-img-top" alt="..." style="height: 15rem">
+          <div class="card-body">
+            <h5 class="card-title">{{=LI(A(ad.title, _href=URL("show", args=ad.id)))}}</h5>
+            <p class="card-text">{{=ad.price}}</p>
+            <a href="#" class="btn btn-primary">{{=ad.location}}</a>
+          </div>
+        </div>
+      </div> 
+      {{pass}}
+    </div>
+  </div>                          
+
+
+
 [ {{=A('create ad', _href=URL('create'))}} ]
+</body>
+</html>
