@@ -80,6 +80,11 @@ def delete():
 
     else:
         return 'No Ad With the ID found'
+
+#@auth.requires_membership('manager')
+def manage():
+    grid = SQLFORM.smartgrid(db.ads, linked_tables=['post'])
+    return dict(grid=grid)
  
 def showbuyer():
     ads = db(db.ads.created_by == auth.user).select(orderby=db.ads.title)
