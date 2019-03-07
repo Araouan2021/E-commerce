@@ -41,7 +41,7 @@ def authenticate():
 def edit():
     return dict()
 
-#@auth.requires_login()
+@auth.requires_login()
 def create():
     form = SQLFORM(db.ads).process(next=URL('index'))
     return dict(form=form)
