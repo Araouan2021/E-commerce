@@ -2,7 +2,7 @@ db = DAL("sqlite://storage.sqlite")
 
 from gluon.tools import Auth
 auth = Auth(db)
-auth.define_tables(username=True)
+auth.define_tables(username=False)
 
 db.define_table('ads',
                 Field('title'),
@@ -13,9 +13,4 @@ db.define_table('ads',
                 Field('file', 'upload'),
                 auth.signature              
                 )
-
-db.define_table('users',
-               Field('db_email'),
-               Field('db_password'))
-               
-
+auth.settings.login_url = URL('login')

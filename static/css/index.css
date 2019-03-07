@@ -1,16 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:300);
 
 h1 {
-  margin-top: 80px;
+  padding: 50px;
   font-family: Montserrat, sans-serif;
   font-size: 50px;
-  margin: 5px;
   color: Gray;
+  text-align: center;
 }
 
 h2 {
-  font-size: 35px;
-  margin: 40px;
+  font-size: 40px;
+  margin: 50px;
   color: RosyBrown;
   text-align: center;
 }

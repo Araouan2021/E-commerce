@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-{{extend 'layout.html'}}
 <link rel="stylesheet" href="{{=URL('static', 'css/bootstrap.min.css')}}"/>
 <link rel="stylesheet" href="{{=URL('static', 'css/index.css')}}"/>
 <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
@@ -37,6 +36,17 @@
       background-color: DimGray;
     }
 
+  input[type=text] {
+     float: right;
+     color: Gray;
+     font-family: "Helvetica";
+     padding: 6px;
+     border: none;
+     margin-top: 8px;
+     margin-right: 16px;
+     font-size: 15px;
+}
+
     h1 {
       text-align: center;
     }
@@ -46,15 +56,27 @@
       text-align: center;
     }
 
+input[type=text] {
+  font-family: "Helvetica"
+  float: right;
+  padding: 6px;
+  border: solid 1px;
+  border-radius: 20px;
+  margin-top: 8px;
+  margin-right: 14px;
+  font-size: 17px;
+}
+
   </style>                          
 </head>
 <body>
 
   <ul>
-    <li><a href="Home">Home</a></li>
-    <li><a href="Clothing">Clothing</a></li>
-    <li><a href="Contact">Contact</a></li>
-    <li style="float:right"><a href="#Login">Login</a></li>
+    <li><a href="{{=URL('index')}}">Home</a></li>
+    <li><a href="{{=URL('contact')}}">Contact</a></li>
+    <li style="float:right"><a href="{{=URL('login')}}">Login</a></li>
+
+    <input type="text" placeholder="Search..">
   </ul>
 
   <div class="container">
@@ -68,7 +90,7 @@
         <div class="card" style="width: 18rem; margin-bottom: 20px;">
           <img src="{{=URL('download', args=ad.file)}}" class="card-img-top" alt="..." style="height: 15rem">
           <div class="card-body">
-            <h5 class="card-title">{{=LI(A(ad.title, _href=URL("show", args=ad.id)))}}</h5>
+            <h5 style="color: DarkGray" class="card-title">{{=LI(A(ad.title, _href=URL("show", args=ad.id)))}}</h5>
             <p class="card-text">{{=ad.price}}</p>
             <a href="#" class="btn btn-primary">{{=ad.location}}</a>
           </div>

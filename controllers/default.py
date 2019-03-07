@@ -1,21 +1,24 @@
 def register():
     return dict()
 
+def user():
+    return dict(form=auth())
+
 def store():
     submitted_firstname = request.vars.firstname
     submitted_lastname = request.vars.lastname
     submitted_email = request.vars.email
     submitted_password = request.vars.password 
 
-    results = db.ads.insert(
-        db_firstname = submitted_firstname,
-        db_lastname = submitted_lastname,
-        db_email = submitted_email,
-        db_password = submitted_password
+    results = auth.register_bare(
+        first_name = submitted_firstname,
+        last_name = submitted_lastname,
+        email = submitted_email,
+        password = submitted_password
         )
 
     if results:
-        return "User Saved Successfully"
+        redirect(URL('login'))
     else:
         return "An Error Occurred"
 
@@ -27,12 +30,11 @@ def login():
     return dict()
 
 def authenticate():
-    submitted_email = request.vars.email
-    submitted_password = request.vars.password
+    email = request.vars.email
+    password = request.vars.password
 
-    if db(db.users.db_email==submitted_email 
-        and db.users.db_password==submitted_password).count()>0:
-        return "User logged in Successfully"
+    if auth.login_bare(email,password):
+        redirect(URL('index'))
     else:
         return "Login failed"
         
@@ -64,12 +66,12 @@ def search():
 def contact():
     return dict(form=auth())
 
-#@auth.requires_login()
+@auth.requires_login()
 def showseller():
     ads = db(db.ads.created_by == auth.user).select(orderby=db.ads.title)
     return dict(ads=ads)
 
-#@auth.requires_login()
+@auth.requires_login()
 def delete():
     parameters = request.args
     submitted_id = parameters[0]
@@ -81,9 +83,10 @@ def delete():
     else:
         return 'No Ad With the ID found'
 
-#@auth.requires_membership('manager')
+@auth.requires_login()
+@auth.requires_membership('manager')
 def manage():
-    grid = SQLFORM.smartgrid(db.ads, linked_tables=['post'])
+    grid = SQLFORM.smartgrid(db.ads)
     return dict(grid=grid)
  
 def showbuyer():

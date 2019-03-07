@@ -1,4 +1,30 @@
 {{extend 'layout.html'}}
+<!DOCTYPE html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+</head>
+<body>
+<style>
+
+h1 {
+	font-family: 'Poppins', sans-serif;
+	color: DarkPink;
+	font-weight: bold;
+	text-align: center;
+	font-size: 40px;
+	padding: 30px;
+}
+
+body {
+	text-align: left;
+	line-height: 50px;
+	color: Teal;
+	font-size: 20px;
+	font-family: 'Poppins', sans-serif;
+
+</style>
+</body>
+</html>
 <h1>Search Ads</h1>
 [ {{=A('listall ads', _href=URL('index'))}}]<br />
 {{=form}}<br />{{=target_div}}
