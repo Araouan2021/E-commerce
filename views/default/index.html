@@ -48,12 +48,16 @@
 }
 
     h1 {
+      margin-top: 5px;
       text-align: center;
+      display: block;
+      padding: 40px;
     }
 
     h2 {
       font-family: 'Courgette', cursive;
       text-align: center;
+      margin: 100px;
     }
 
 input[type=text] {
@@ -74,26 +78,26 @@ input[type=text] {
   <ul>
     <li><a href="{{=URL('index')}}">Home</a></li>
     <li><a href="{{=URL('contact')}}">Contact</a></li>
+    <li style="float:right"><a href="{{=URL('logout')}}">Logout</a></li>
     <li style="float:right"><a href="{{=URL('login')}}">Login</a></li>
     <li style="float:right"><a href="{{=URL('register')}}">Register</a></li>
-
-    <input type="text" placeholder="Search..">
+    
   </ul>
 
   <div class="container">
     <div class="row">
-      <h1>Clothes R' Us</h1>
+      <h1 style="text-align: center">Clothes R' Us</h1>
       <h2>Current Ads</h2>
     </div>
     <div class="row">
       {{for ad in ads:}}
       <div class="col-4">
         <div class="card" style="width: 18rem; margin-bottom: 20px;">
-          <img src="{{=URL('download', args=ad.file)}}" class="card-img-top" alt="..." style="height: 15rem">
+          <img src="{{=URL('download', args=ad.file)}}" class="card-img-top" alt="..." style="height: 15rem; width: 15rem">
           <div class="card-body">
-            <h5 style="color: DarkGray" class="card-title">{{=LI(A(ad.title, _href=URL("show", args=ad.id)))}}</h5>
-            <p class="card-text">{{=ad.price}}</p>
-            <a href="#" class="btn btn-primary">{{=ad.location}}</a>
+            <h5 style="color: RosyBrown" class="card-title">{{=LI(A(ad.title, _href=URL("show", args=ad.id)))}}</h5>
+            <p style="color: RosyBrown" class="card-text">{{=ad.price}}</p>
+            <a href="#" style="background-color: DarkGray; border-color: DarkGray; font-family: 'Montserrat', sans-serif" class="btn btn-primary">{{=ad.location}}</a>
           </div>
         </div>
       </div> 

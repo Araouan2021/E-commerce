@@ -20,13 +20,16 @@ def store():
     if results:
         redirect(URL('login'))
     else:
-        return "An Error Occurred"
+        return "An Error Occurred"       
 
 def seeUsers():
     users =db().select(db.users.ALL)
     return dict(users=users)
 
 def login():
+    return dict()
+
+def logout():
     return dict()
 
 def authenticate():
