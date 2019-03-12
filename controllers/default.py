@@ -92,10 +92,6 @@ def manage():
     grid = SQLFORM.smartgrid(db.ads)
     return dict(grid=grid)
  
-def showbuyer():
-    ads = db(db.ads.created_by == auth.user).select(orderby=db.ads.title)
-    return dict(ads=ads)
-
 def callback():
     query = db.ads.title.contains(request.vars.keyword)
     pages = db(query).select(orderby=db.ads.title)
