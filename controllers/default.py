@@ -61,10 +61,9 @@ def index():
     return dict(ads=ads)
 
 def search():
-    return dict(form=FORM(INPUT(_id='keyword',
-                                _name='keyword',
-                                _onkeyup="ajax('callback', ['keyword'], 'target');")),
-                target_div=DIV(_id='target'))
+    query = db.ads.title.contains(request.vars.search)
+    ads = db(query).select(orderby=db.ads.title)
+    return dict(ads=ads)
 
 def contact():
     return dict(form=auth())
@@ -91,12 +90,6 @@ def delete():
 def manage():
     grid = SQLFORM.smartgrid(db.ads)
     return dict(grid=grid)
- 
-def callback():
-    query = db.ads.title.contains(request.vars.keyword)
-    pages = db(query).select(orderby=db.ads.title)
-    links = [A(ads.title, _href=URL('show', args=ads.id)) for a in ads]
-    return UL(*links)
 
 
     

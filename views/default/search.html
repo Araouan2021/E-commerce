@@ -1,29 +1,127 @@
 <!DOCTYPE html>
+<html>
 <head>
-<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+<link rel="stylesheet" href="{{=URL('static', 'css/bootstrap.min.css')}}"/>
+<link rel="stylesheet" href="{{=URL('static', 'css/index.css')}}"/>
+<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
 </head>
-<body>
 <style>
 
+ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: DarkGray;
+    }
+
+li {
+      float: left;
+    }
+
+li {
+      display: inline;
+    }
+
+li a {
+      display: block;
+      color: RosyBrown;
+      font-family: 'Playball', cursive;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+li a:hover {
+      background-color: DimGray;
+    }
+
+input[type=text] {
+     float: right;
+     color: Gray;
+     font-family: 'Playball', cursive;
+     padding: 6px;
+     border: none;
+     margin-top: 8px;
+     margin-right: 16px;
+     font-size: 50px;
+}
+
+input[type=text] {
+  font-family: 'Playball', cursive;
+  float: right;
+  padding: 6px;
+  border: solid 1px;
+  border-radius: 20px;
+  margin-top: 8px;
+  margin-right: 14px;
+  font-size: 20px;
+}
+
 h1 {
-	font-family: 'Poppins', sans-serif;
-	color: DarkPink;
-	font-weight: bold;
-	text-align: center;
-	font-size: 40px;
-	padding: 30px;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 65px;
+  margin: 10px;
+  color: Gray;
+  text-align: center;
+  line-height: 20px;
+}
+
+h2 {
+  font-family: 'Courgette', cursive;
+  font-size: 45px;
+  margin: 50px;
+  padding: 1px;
+  color: RosyBrown;
+  text-align: center;
 }
 
 body {
-	text-align: left;
-	line-height: 50px;
-	color: Teal;
-	font-size: 20px;
-	font-family: 'Poppins', sans-serif;
+  background-color: MistyRose;
+}
 
-</style>
+</style>                       
+<body>
+
+  <ul>
+    <li><a href="{{=URL('index')}}">Home</a></li>
+    <li><a href="{{=URL('contact')}}">Contact</a></li>
+    <div class="search-container">
+    <form action="{{=URL('search')}}" method="post">
+      <input type="text" placeholder="Search.." name="search">
+      </form>
+    <li style="float:right"><a href="{{=URL('default','user/logout')}}">Logout</a></li>
+    <li style="float:right"><a href="{{=URL('login')}}">Login</a></li>
+    <li style="float:right"><a href="{{=URL('register')}}">Register</a></li>
+    
+  </ul>
+      <h1 style="text-align: center">Clothes R' Us</h1>
+      <h2>Current Ads</h2>
+    <div class="container">
+    <div class="row">
+    {{if ads:}}
+      {{for ad in ads:}}
+      <div class="col-4">
+        <div class="card" style="width: 18rem; margin-bottom: 20px;">
+          <img src="{{=URL('download', args=ad.file)}}" class="card-img-top" alt="..." style="height: 10rem; width: 10rem">
+          <div class="card-body">
+            <h5 class="card-title">{{=LI(A(ad.title, _href=URL("show", args=ad.id)))}}</h5>
+            <p style="color: DarkSlateGray" class="card-text">{{=ad.price}}</p>
+            <a href="#" style="background-color: DarkGray; border-color: DarkGray; font-family: 'Montserrat', sans-serif" class="btn btn-primary">{{=ad.location}}</a>
+          </div>
+        </div>
+      </div> 
+      {{pass}}
+      {{else:}}
+      <h2>No Ad Found</h2>
+{{pass}}
+    </div>
+  </div>                          
+
+
+
 </body>
 </html>
-<h1>Search Ads</h1>
-[ {{=A('listall ads', _href=URL('index'))}}]<br />
-{{=form}}<br />{{=target_div}}

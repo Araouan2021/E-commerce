@@ -89,8 +89,11 @@ body {
   <ul>
     <li><a href="{{=URL('index')}}">Home</a></li>
     <li><a href="{{=URL('contact')}}">Contact</a></li>
-    <input type="text" placeholder="Search..">
-    <li style="float:right"><a href="{{=URL('logout')}}">Logout</a></li>
+    <div class="search-container">
+    <form action="{{=URL('search')}}" method="post">
+      <input type="text" placeholder="Search.." name="search">
+      </form>
+    <li style="float:right"><a href="{{=URL('default','user/logout')}}">Logout</a></li>
     <li style="float:right"><a href="{{=URL('login')}}">Login</a></li>
     <li style="float:right"><a href="{{=URL('register')}}">Register</a></li>
     
