@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{{=URL('static', 'css/index.css')}}"/>
 <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 </head>
 <style>
 
@@ -102,19 +103,22 @@ body {
       <h1 style="text-align: center">9-5</h1>
       <h2>Current Ads</h2>
     <div class="container">
-    <div class="row">
-      {{for ad in ads:}}
-      <div class="col-4">
-        <div class="card" style="width: 18rem; margin-bottom: 20px;">
-          <img src="{{=URL('download', args=ad.file)}}" class="card-img-top" alt="..." style="height: 10rem; width: 10rem">
-          <div class="card-body">
-            <h5 class="card-title">{{=LI(A(ad.title, _href=URL("show", args=ad.id)))}}</h5>
-            <p style="color: DarkSlateGray" class="card-text">{{=ad.price}}</p>
-            <a href="#" style="background-color: DarkGray; border-color: DarkGray; font-family: 'Montserrat', sans-serif" class="btn btn-primary">{{=ad.location}}</a>
-          </div>
-        </div>
-      </div> 
-      {{pass}}
+      <div class="row">
+        {{for ad in ads:}}
+        <div class="col-4">
+          <a href="{{=URL('show', args=ad.id)}}">
+            <div class="card" style="width: 18rem; margin-bottom: 20px;">
+              <img src="{{=URL('download', args=ad.file)}}" class="card-img-top" alt="..." style="height: 10rem; width: 10rem">
+              <div class="card-body">
+                <h5 class="card-title">{{=LI(A(ad.title, _href=URL("show", args=ad.id)))}}</h5>
+                <p style="color: DarkGray" class="card-text">{{=ad.price}}</p>
+                <p style="color: Gray; font-family: 'Roboto Condensed'">{{=ad.location}}</p>
+              </div>
+            </div>
+          </a>
+        </div> 
+        {{pass}}
+      </div>
     </div>
   </div>                          
 </body>
