@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{{=URL('static', 'css/index.css')}}"/>
 <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto Condensed" rel="stylesheet">
 </head>
 <style>
 ul {
@@ -100,10 +101,11 @@ body {
           <div class="card-body">
             <h5 class="card-title">{{=LI(A(ad.title))}}</h5>
             <p style="color: DarkSlateGray" class="card-text">{{=ad.price}}</p>
-            <a href="#" style="background-color: DarkGray; border-color: DarkGray; font-family: 'Montserrat', sans-serif" class="btn btn-primary">{{=ad.location}}</a>
+            <p style="color: Gray; font-family: 'Roboto Condensed'">{{=ad.location}}</p>
           </div>
         </div>
       </div> 
+      </a>
       {{pass}}
       {{else:}}
       <h2>No Ad Found</h2>
